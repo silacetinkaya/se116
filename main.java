@@ -1,27 +1,25 @@
+import java.util.Random;
 public class main {
-
     public static void main(String[] args) {
-        mp3[] mp3Files = new mp3[4];
-        mp3Files[0] = new mp3(128, 180, "Uriah Heep", "Demons and Wizards", "The Wizard", 1972);
-        mp3Files[1] = new mp3(128, 240, "Uriah Heep", "Demons and Wizards", "Traveller in Time", 1972);
-        mp3Files[2] = new mp3(128, 210, "Jethro Tull", "Heavy Horses", "Heavy Horses", 1978);
-        mp3Files[3] = new mp3(128, 300, "Rainbow", "Ritchie Blackmore’s Rainbow", "The Temple of the King", 1975);
+        Animal[] animals = new Animal[5];
+        animals[0] = new Animal("dog", "hav");
+        animals[1] = new Animal("cat", "meow");
+        animals[2] = new Animal("pig", "oink");
+        animals[3] = new Animal("sheep", "mee");
+        animals[4] = new Animal("cow", "moo");
 
 
+        choir(animals);
+    }
+    public static void choir(Animal[] animals){
+        Random rd=new Random();
+        for(int i=0;i<20;i++){
+            int index=rd.nextInt(0,4);
+            System.out.println(animals[index].getSound());
 
-
-        String[][] albums = mp3.getAlbumsAndSongs(mp3Files);
-
-        for (String[] album : albums) {
-            for (String item : album) {
-                System.out.print(item + " ");
-            }
-            System.out.println();
         }
 
 
-        String[][] arr = new String[albums.length][];
-
-
     }
+
 }
